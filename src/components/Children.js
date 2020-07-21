@@ -1,5 +1,5 @@
 import React from "react"
-import DragableComp from "./DragableComp.jsx"
+import DragableComp from "./DragableComp.js"
 
 const Children = ({ item, index, moveRow }) => {
     return (

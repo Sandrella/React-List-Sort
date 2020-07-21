@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { DndProvider } from "react-dnd"
 import { HTML5Backend } from "react-dnd-html5-backend"
-import Children from "./Children"
+import Children from "./Children.js"
 import update from "immutability-helper"
 
 const Parent = (props) => {

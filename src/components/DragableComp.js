@@ -10,6 +10,7 @@ const Comp = ({ connectDragSource, connectDropTarget, children }) => {
         connectDropTarget(<div style={style}>{children}</div>)
     )
 }
+
 const cardSource = {
     beginDrag(props) {
         dragingIndex = props.index
@@ -31,10 +32,12 @@ const cardTarget = {
     }
 }
 
-const DragableComp = DropTarget("row", cardTarget, (connect, monitor) => ({
-    connectDropTarget: connect.dropTarget(),
-    isOver: monitor.isOver()
-}))(
+const DragableComp = DropTarget("row", cardTarget,
+    (connect, monitor) => ({
+        connectDropTarget: connect.dropTarget(),
+        isOver: monitor.isOver()
+    })
+)(
     DragSource("row", cardSource, (connect) => ({
         connectDragSource: connect.dragSource()
     }))(Comp)
